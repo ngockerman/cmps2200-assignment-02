@@ -1,0 +1,145 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+
+\begin{document}
+\title{\sf CMPS 2200: Homework 2}
+\author{}
+\date{\vspace{-.5in}\sf Monday, Sep 28}
+\maketitle\thispagestyle{empty}
+\input{std-mac}
+
+Complete the problems below and turn in your written answers on Canvas
+or in person. I encourage you to
+verbally discuss approaches to solving individual problems, but your written
+submission must be your work, and only your work.
+
+\begin{enumerate}
+
+\item Suppose that for a given task you are choosing between the following three algorithms:
+  
+  \begin{itemize}
+    \item Algorithm $\mathcal{A}$ solves problems by dividing them into five
+      subproblems of half the size, recursively solving each
+      subproblem, and then combining the solutions in linear time.
+      \item Algorithm $\mathcal{B}$ solves problems of size $n$ by recursively
+        solving two subproblems of size $n-1$ and then combining the
+        solutions in constant time.
+        \item Algorithm $\mathcal{C}$ solves problems of size $n$ by
+          dividing them into nine subproblems of size $n/3$,
+          recursively solving each subproblem, and then combining the
+          solutions in $O(n^2)$ time.
+        \end{itemize}
+
+        What are the asymptotic running times of each of these
+        algorithms? Which algorithm would you choose?
+
+\punt{  \textbf{Solution:} We write the recursive formula of running time of each algorithm in the following: 
+
+\begin{enumerate}
+
+\item Algorithm $\mathcal{A}$: $T(n)=5T(n/2)+\Theta(n) \implies T(n)= \Theta(n^{\log 5})$.
+
+\item Algorithm $\mathcal{B}$: $T(n)=2T(n-1)+\Theta(1) \implies T(n)=\Theta(2^n)$.
+
+\item Algorithm $\mathcal{C}$: $T(n)=9T(n/3)+O(n^2) \implies T(n)=O(n^2\log n)$.
+
+To compute the problem we definitely must choose the third algorithm with smallest running time.
+\end{enumerate}
+}
+
+\item For each recurrence below, use either the brick method,
+  substitution, or induction to derive an
+  asymptotic upper bound.
+  \begin{enumerate}
+  \item $T(n)=2T(n/3)+1$
+  \item $T(n)=5T(n/4)+n$
+  \item $T(n)=7T(n/7)+n$
+  \item $T(n)=9T(n/3)+n^2$
+  \item $T(n)=8T(n/2)+n^3$
+    \item $T(n)=49T(n/25)+n^{3/2}\log n$
+    \item $T(n)=T(n-1)+2$
+    \item $T(n)= T(n-1)+n^c$, with $c\geq 1$
+      \item $T(n)=T(\sqrt{n})+1$
+      \end{enumerate}
+
+ \punt{
+
+   % need to rewrite using brick method
+   
+ \textbf{Solution:} Solve the following recurrences to obtain asymptotic\textbf {Problem 2.5.} We only use Master's theorem for case (a) to (f). We only need to substitute the values that we are given into the formula (we can use the theorem and get $\Theta(.)$ since all $f(n)$s are in term of $\Theta(.)$):
+\begin{enumerate}
+            \item $T(n)=2T(n/3)+1$: Since $a=2, b=3, d=0 (d<\log_3 2) \implies T(n)= \Theta(n^{\log_3 2})$.
+           
+            \item $T(n)=5T(n/4)+n$: Since $a=5, b=4, d=1 (d<\log_4 5) \implies T(n)= \Theta(n^{\log_4 5})$.
+           
+            \item $T(n)=7T(n/7)+n$: Since $a=7, b=7, d=1 (d=\log_7 7) \implies T(n)= \Theta(n\log n)$.
+           
+            \item $T(n)=9T(n/3)+n^2$: Since $a=9, b=3, d=2 (d=\log_3 9) \implies T(n)= \Theta(n^2\log n)$.
+   
+    \item $T(n)=8T(n/2)+n^3$: Since $a=8, b=2, d=3 (d=\log_2 8) \implies T(n)= \Theta(n^3\log n)$.
+   
+    \item $T(n)=49T(n/25)+n^{3/2}\log n$: Since $a=49, b=25,~ \forall\varepsilon>0 ~d=3/2+\varepsilon (d> \log_25 49) \implies T(n)= \Theta(n^{3/2}{\log n})$.
+   
+    \item $T(n)=T(n-1)+2$: \\
+    $T(n)=T(n-2)+4$ \\
+    $\vdots $\\
+    $T(n)=T(1)+2(n-1)$  $\implies T(n)=\Theta (n)$.
+    
+    \item $T(n)= T(n-1)+n^c (c\geq 1)$:  $T(n) = n^c+(n-1)^c+(n-2)^c+\cdots +2^c+1 < \underbrace{n^c+n^c+n^c+\cdots + n^c+n^c}_\text{n times}= n.n^c= n^{c+1}1$, which is an upper bound when $c'=1 , n_0=1$. To get the same for lower bound:
+   
+    $\underbrace{(n/2)^c+(n/2)^c+(n/2)^c+\cdots+ (n/2)^c}_\text{n/2 times} < n^c+(n-1)^c+(n-2)^c+\cdots +2^c+1$, when $c''=(\frac{1}{2^c}) , n_0=1$.
+   
+    Which implies that $T(n)= \Theta(n^{c+1})$.
+    
+    
+    
+    \item $T(n)= T(n-1)+ c^n$: $T(n)= T(n-2)+ c^n+c^{n-1} \implies \cdots T(n)= T(0) + \Sigma^n_{i=1} c^i= \Theta (c^n)$
+   
+    \item  $T(n)=2T(n-1)+1$: $T(n)=2(2T(n-2)+1)+1 \implies \cdots T(n)= 2^kT(n-k)+\sum_{i=0}^{k-1}2^i$. Since $k$ must be $n$, thus: $T(n)= \Theta(2^n)$.
+    
+    
+    
+    \item $T(n)=T(\sqrt{n})+1$. Taking square root implies that $n$ must be $2^{2^t}$ for some $t>0$. Let $S(t)= T(2^{2^t})$, then we rewrite the latter recursive formula as:
+    $S(t)=S(t-1)+1 \implies S(t)=\Theta(t)$. Since $t=\log\log n$, therefore $T(n)=S(t)= \Theta(\log\log n)$.
+\end{enumerate}
+}
+
+\item Now that you have some practice solving recurrences, let's work
+  on implementing some algorithms. In lecture we discussed a divide and conquer algorithm for
+    integer multiplication. This algorithm takes as input two $n$-bit
+    strings $x = \langle x_L, x_R\rangle$ and
+    $y=\langle y_L, y_R\rangle$ and computes the product $xy$ by using
+    the fact that
+    $xy = 2^{n/2}x_Ly_L + 2^{n/2}(x_Ly_R+x_Ry_L) + x_Ry_R.$ Write the
+    algorithm specification in SPARC. Then, use the stub functions in
+    \texttt{main.py} to implement two algorithms for integer
+    multiplication: a divide and conquer algorithm that runs in
+    quadratic time, and the Karatsaba-Ofman algorithm running in
+    subquadratic time. Then test the empirical running times across a
+    variety of inputs to test whether your code scales in the manner
+    described by the asymptotic runtime?
+
+    \punt{
+      \item In lecture we also showed that the running time of this
+        divide-and-conquer integer multiplication algorithm is really no
+        faster than the grade school multiplication. This is because
+        we require 4 recursive calls on inputs of size $n/2$, which
+        compute $x_Ly_L, x_Ly_R, x_Ry_L$ and $x_Ry_R.$ Then combining
+        solutions requires $O(n)$ time. We can improve
+        upon our divide-and-conquer algorithm by reducing the number
+        of recursions to compute the same terms. First, observe
+        that $(x_L + x_R)(y_L + x_R) = x_Ly_L + x_Ry_L + x_Ly_R +
+        x_Ry_R$. Using this fact, come up with an asymptotically
+        faster algorithm for integer multiplication. How do the work
+        and span of this algorithm differ from the standard one? 
+
+        \item Implement your faster algorithm in Python. In practice
+          is this algorithm faster than the standard one? How large
+          does the input have to be in order for the improved algorithm
+          to be 100x faster?
+      
+    \end{enumerate}}
+
+\end{enumerate}
+\end{document}
