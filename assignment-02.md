@@ -10,56 +10,56 @@ work please scan your work and submit a PDF titled `assignment-02.pdf`
 and push to your github repository.
 
 
-1. Derive asymptotic upper bounds for each recurrence below.
-  * $T(n)=2T(n/3)+1$
+1. Derive asymptotic upper bounds of work for each recurrence below.
+  * $W(n)=2W(n/3)+1$
 .  
 .  
 .  
 .  
 .  
-  * $T(n)=5T(n/4)+n$
+  * $W(n)=5W(n/4)+n$
 .  
 .  
 .  
 .  
 .  
-  * $T(n)=7T(n/7)+n$
+  * $W(n)=7W(n/7)+n$
 .  
 .  
 .  
 .  
 .  
-  * $T(n)=9T(n/3)+n^2$
+  * $W(n)=9W(n/3)+n^2$
 .  
 .  
 .  
 .  
 .  
-  * $T(n)=8T(n/2)+n^3$
+  * $W(n)=8W(n/2)+n^3$
 .  
 .  
 .  
 .  
 .  
-  * $T(n)=49T(n/25)+n^{3/2}\log n$
+  * $W(n)=49W(n/25)+n^{3/2}\log n$
 .  
 .  
 .  
 .  
 .  
-  * $T(n)=T(n-1)+2$
+  * $W(n)=W(n-1)+2$
 .  
 .  
 .  
 .  
 .  
-  * $T(n)= T(n-1)+n^c$, with $c\geq 1$
+  * $W(n)= W(n-1)+n^c$, with $c\geq 1$
 .  
 .  
 .  
 .  
 .  
-  * $T(n)=T(\sqrt{n})+1$
+  * $W(n)=W(\sqrt{n})+1$
 
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
@@ -87,7 +87,7 @@ and push to your github repository.
   as input two $n$-bit strings $x = \langle x_L, x_R\rangle$ and
   $y=\langle y_L, y_R\rangle$ and computes the product $xy$ by using
   the fact that $xy = 2^{n/2}x_Ly_L + 2^{n/2}(x_Ly_R+x_Ry_L) +
-  x_Ry_R.$ Write the algorithm specification in SPARC. Then, use the
+  x_Ry_R.$ Use the
   stub functions in `main.py` to implement two algorithms for integer
   multiplication: a divide and conquer algorithm that runs in
   quadratic time, and the Karatsaba-Ofman algorithm running in
