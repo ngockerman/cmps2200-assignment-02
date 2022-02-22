@@ -64,15 +64,15 @@ and push to your github repository.
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
 
-	* Algorithm $\mathcal{A}$ solves problems by dividing them into
+  * Algorithm $\mathcal{A}$ solves problems by dividing them into
       five subproblems of half the size, recursively solving each
       subproblem, and then combining the solutions in linear time.
-	  
-	* Algorithm $\mathcal{B}$ solves problems of size $n$ by
+    
+  * Algorithm $\mathcal{B}$ solves problems of size $n$ by
       recursively solving two subproblems of size $n-1$ and then
       combining the solutions in constant time.
-		
-	* Algorithm $\mathcal{C}$ solves problems of size $n$ by dividing
+    
+  * Algorithm $\mathcal{C}$ solves problems of size $n$ by dividing
       them into nine subproblems of size $n/3$, recursively solving
       each subproblem, and then combining the solutions in $O(n^2)$
       time.
@@ -92,5 +92,8 @@ and push to your github repository.
   multiplication: a divide and conquer algorithm that runs in
   subquadratic time. Then test the empirical running times across a
   variety of inputs to test whether your code scales in the manner
-  described by the asymptotic runtime.
+  described by the asymptotic runtime. Please refer to Recitation 3 for some basic implementations. 
+
+ 
+
 
