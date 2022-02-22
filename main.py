@@ -18,11 +18,6 @@ class BinaryNumber:
 ## ensure that x, y are appropriately sized binary vectors for a
 ## divide and conquer approach.
 
-def quadratic_multiply(x, y):
-    ### TODO
-    pass
-    ###
-
 def subquadratic_multiply(x, y):
     ### TODO
     pass
@@ -30,17 +25,13 @@ def subquadratic_multiply(x, y):
 
 ## Feel free to add your own tests here.
 def test_multiply():
-    assert quadratic_multiply(BinaryNumber(2), BinaryNumber(2)) == 2*2
+    assert subquadratic_multiply(BinaryNumber(2), BinaryNumber(2)) == 2*2
 
 def time_multiply(x, y, f):
     start = time.time()
     # multiply two numbers x, y using function f
     return (time.time() - start)*1000
-    
-def compare_multiply():
-    pass
-    # compare the empirical runtimes of multiplication functions
-    ### TODO - add test cases and measure runtime
+
     
     
 
