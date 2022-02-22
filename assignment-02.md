@@ -88,9 +88,8 @@ and push to your github repository.
   $y=\langle y_L, y_R\rangle$ and computes the product $xy$ by using
   the fact that $xy = 2^{n/2}x_Ly_L + 2^{n/2}(x_Ly_R+x_Ry_L) +
   x_Ry_R.$ Use the
-  stub functions in `main.py` to implement two algorithms for integer
+  stub functions in `main.py` to implement Karatsaba-Ofman algorithm algorithm for integer
   multiplication: a divide and conquer algorithm that runs in
-  quadratic time, and the Karatsaba-Ofman algorithm running in
   subquadratic time. Then test the empirical running times across a
   variety of inputs to test whether your code scales in the manner
   described by the asymptotic runtime.
