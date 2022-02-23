@@ -92,8 +92,8 @@ and push to your github repository.
   multiplication: a divide and conquer algorithm that runs in
   subquadratic time. Then test the empirical running times across a
   variety of inputs to test whether your code scales in the manner
-  described by the asymptotic runtime. Please refer to Recitation 3 for some basic implementations. 
-
+  described by the asymptotic runtime. Please refer to Recitation 3 for some basic implementations, and Eqs (7) and (8) in the slides https://github.com/allan-tulane/cmps2200-slides/blob/main/module-02-recurrences/recurrences-integer-multiplication.ipynb
+ 
  
 
 
