@@ -10,7 +10,9 @@ work please scan your work and submit a PDF titled `assignment-02.pdf`
 and push to your github repository.
 
 
-1. Derive asymptotic upper bounds of work for each recurrence below.
+## Part 1. Asymptotic Analysis
+
+Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
 .  
 .  
@@ -62,7 +64,9 @@ and push to your github repository.
   * $W(n)=W(\sqrt{n})+1$
 
 
-2. Suppose that for a given task you are choosing between the following three algorithms:
+## Part 2. Algorithm Comparison
+
+Suppose that for a given task you are choosing between the following three algorithms:
 
   * Algorithm $\mathcal{A}$ solves problems by dividing them into
       five subproblems of half the size, recursively solving each
@@ -81,18 +85,74 @@ and push to your github repository.
     Which algorithm would you choose?
 
 
-3. Now that you have some practice solving recurrences, let's work on
-  implementing some algorithms. In lecture we discussed a divide and
-  conquer algorithm for integer multiplication. This algorithm takes
-  as input two $n$-bit strings $x = \langle x_L, x_R\rangle$ and
-  $y=\langle y_L, y_R\rangle$ and computes the product $xy$ by using
-  the fact that $xy = 2^{n/2}x_Ly_L + 2^{n/2}(x_Ly_R+x_Ry_L) +
-  x_Ry_R.$ Use the
-  stub functions in `main.py` to implement Karatsaba-Ofman algorithm algorithm for integer
-  multiplication: a divide and conquer algorithm that runs in
-  subquadratic time. Then test the empirical running times across a
-  variety of inputs in `test_main.py` to test whether your code scales in the manner
-  described by the asymptotic runtime. Please refer to Recitation 3 for some basic implementations, and Eqs (7) and (8) in the slides https://github.com/allan-tulane/cmps2200-slides/blob/main/module-02-recurrences/recurrences-integer-multiplication.ipynb
+
+## Part 3: Parenthesis Matching
+
+A common task of compilers is to ensure that parentheses are matched. That is, each open parenthesis is followed at some point by a closed parenthesis. Furthermore, a closed parenthesis can only appear if there is a corresponding open parenthesis before it. So, the following are valid:
+
+- `( ( a ) b )`
+- `a () b ( c ( d ) )`
+
+but these are invalid:
+
+- `( ( a )`
+- `(a ) ) b (`
+
+Below, we'll solve this problem three different ways, using iterate, scan, and divide and conquer.
+
+**3a. iterative solution** Implement `parens_match_iterative`, a solution to this problem using the `iterate` function. **Hint**: consider using a single counter variable to keep track of whether there are more open or closed parentheses. How can you update this value while iterating from left to right through the input? What must be true of this value at each step for the parentheses to be matched? To complete this, complete the `parens_update` function and the `parens_match_iterative` function. The `parens_update` function will be called in combination with `iterate` inside `parens_match_iterative`. Test your implementation with `test_parens_match_iterative`.
+
+
+.  
+. 
+
+
+
+**3b.** What are the recurrences for the Work and Span of this solution? What are their Big Oh solutions?
+
+**enter answer in `answers.md`**
+
+.  
+. 
+
+
+
+**3c. scan solution** Implement `parens_match_scan` a solution to this problem using `scan`. **Hint**: We have given you the function `paren_map` which maps `(` to `1`, `)` to `-1` and everything else to `0`. How can you pass this function to `scan` to solve the problem? You may also find the `min_f` function useful here. Implement `parens_match_scan` and test with `test_parens_match_scan`
+
+.  
+. 
+
+
+
+**3d.** Assume that any `map`s are done in parallel, and that we use the efficient implementation of `scan` from class. What are the recurrences for the Work and Span of this solution? 
+
+**enter answer in `answers.md`**
+
+.  
+.  
+
+
+
+
+**3e. divide and conquer solution** Implement `parens_match_dc_helper`, a divide and conquer solution to the problem. A key observation is that we *cannot* simply solve each subproblem using the above solutions and combine the results. E.g., consider '((()))', which would be split into '(((' and ')))', neither of which is matched. Yet, the whole input is matched. Instead, we'll have to keep track of two numbers: the number of unmatched right parentheses (R), and the number of unmatched left parentheses (L). `parens_match_dc_helper` returns a tuple (R,L). So, if the input is just '(', then `parens_match_dc_helper` returns (0,1), indicating that there is 1 unmatched left parens and 0 unmatched right parens. Analogously, if the input is just ')', then the result should be (1,0). The main difficulty is deciding how to merge the returned values for the two recursive calls. E.g., if (i,j) is the result for the left half of the list, and (k,l) is the output of the right half of the list, how can we compute the proper return value (R,L) using only i,j,k,l? Try a few example inputs to guide your solution, then test with `test_parens_match_dc_helper`.
+
+
+
+.  
+. 
+
+
+
+
+
+**3f.** Assuming any recursive calls are done in parallel, what are the recurrences for the Work and Span of this solution? What are their Big Oh solutions?
+
+**enter answer in `answers.md`**
+
+.  
+. 
+
+
  
  
 
