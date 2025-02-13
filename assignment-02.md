@@ -15,50 +15,55 @@ and push to your github repository.
 Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
 .  
-.  
+. 
+**enter answer here**
 .  
 .  
 .  
   * $W(n)=5W(n/4)+n$
 .  
-.  
+.
+**enter answer here**
 .  
 .  
 .  
   * $W(n)=7W(n/7)+n$
 .  
-.  
+. 
+**enter answer here**
 .  
 .  
 .  
   * $W(n)=9W(n/3)+n^2$
 .  
-.  
+.
+**enter answer here**
 .  
 .  
 .  
   * $W(n)=8W(n/2)+n^3$
 .  
-.  
+.
+**enter answer here**
 .  
 .  
 .  
   * $W(n)=49W(n/25)+n^{3/2}\log n$
 .  
-.  
+**enter answer here**
 .  
 .  
 .  
   * $W(n)=W(n-1)+2$
 .  
-.  
+**enter answer here**  
 .  
 .  
 .  
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
 .  
 .  
-.  
+**enter answer here**  
 .  
 .  
   * $W(n)=W(\sqrt{n})+1$
@@ -84,7 +89,7 @@ Suppose that for a given task you are choosing between the following three algor
     What are the asymptotic running times of each of these algorithms?
     Which algorithm would you choose?
 
-
+**enter answer here**
 
 ## Part 3: Parenthesis Matching
 
@@ -110,7 +115,7 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **3b.** What are the recurrences for the Work and Span of this solution? What are their Big Oh solutions?
 
-**enter answer in `answers.md`**
+**enter answer here**
 
 .  
 . 
@@ -126,7 +131,7 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **3d.** Assume that any `map`s are done in parallel, and that we use the efficient implementation of `scan` from class. What are the recurrences for the Work and Span of this solution? 
 
-**enter answer in `answers.md`**
+**enter answer here**
 
 .  
 .  
@@ -147,7 +152,7 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **3f.** Assuming any recursive calls are done in parallel, what are the recurrences for the Work and Span of this solution? What are their Big Oh solutions?
 
-**enter answer in `answers.md`**
+**enter answer here**
 
 .  
 . 
