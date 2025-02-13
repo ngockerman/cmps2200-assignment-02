@@ -13,60 +13,97 @@ and push to your github repository.
 ## Part 1. Asymptotic Analysis
 
 Derive asymptotic upper bounds of work for each recurrence below.
-  * $W(n)=2W(n/3)+1$
+
+* $W(n)=2W(n/3)+1$
+.  
 .  
 . 
-**enter answer here**
-.  
-.  
-.  
-  * $W(n)=5W(n/4)+n$
-.  
-.
-**enter answer here**
-.  
-.  
-.  
-  * $W(n)=7W(n/7)+n$
 .  
 . 
-**enter answer here**
 .  
-.  
-.  
-  * $W(n)=9W(n/3)+n^2$
-.  
-.
-**enter answer here**
-.  
-.  
-.  
-  * $W(n)=8W(n/2)+n^3$
+. 
+ 
+* $W(n)=5W(n/4)+n$
 .  
 .
-**enter answer here**
+.  
+. 
+.  
+. 
+.  
+.  
+. 
+
+* $W(n)=7W(n/7)+n$
+.  
+. 
+.  
+.  
+. 
+.  
+.
+
+* $W(n)=9W(n/3)+n^2$
+.  
+.
+. 
+.  
+. 
 .  
 .  
 .  
-  * $W(n)=49W(n/25)+n^{3/2}\log n$
+.
+
+* $W(n)=8W(n/2)+n^3$
 .  
-**enter answer here**
-.  
-.  
-.  
-  * $W(n)=W(n-1)+2$
-.  
-**enter answer here**  
+.
 .  
 .  
 .  
-  * $W(n)= W(n-1)+n^c$, with $c\geq 1$
+.  
+. 
+.  
+. 
+
+
+* $W(n)=49W(n/25)+n^{3/2}\log n$
 .  
 .  
-**enter answer here**  
+. 
+.  
+. 
 .  
 .  
-  * $W(n)=W(\sqrt{n})+1$
+.  
+
+* $W(n)=W(n-1)+2$
+.  
+.  
+. 
+.  
+. 
+.  
+.  
+.  
+
+* $W(n)= W(n-1)+n^c$, with $c\geq 1$
+.  
+.  
+.  
+.  
+.  
+. 
+.  
+. 
+
+* $W(n)=W(\sqrt{n})+1$
+.  
+.  
+.  
+.  
+.  
+. 
+. 
 
 
 ## Part 2. Algorithm Comparison
@@ -89,7 +126,15 @@ Suppose that for a given task you are choosing between the following three algor
     What are the asymptotic running times of each of these algorithms?
     Which algorithm would you choose?
 
-**enter answer here**
+
+.  
+.  
+.  
+.  
+. 
+. 
+
+
 
 ## Part 3: Parenthesis Matching
 
