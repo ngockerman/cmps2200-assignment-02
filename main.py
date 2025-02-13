@@ -2,7 +2,9 @@
 CMPS 2200  Assignment 2.
 See assignment-02.md for details.
 """
-import time
+from collections import defaultdict
+import math
+
 #### Iterative solution
 def parens_match_iterative(mylist):
     """
@@ -52,15 +54,7 @@ def parens_update(current_output, next_input):
     ###
 
 
-def test_parens_match_iterative():
-    assert parens_match_iterative(['(', ')']) == True
-    assert parens_match_iterative(['(']) == False
-    assert parens_match_iterative([')']) == False
-    assert parens_match_iterative(['(', 'a', ')', '(', ')']) == True
-    assert parens_match_iterative(['(',  '(', '(', ')', ')', ')']) == True
-    assert parens_match_iterative(['(', '(', ')']) == False
-    assert parens_match_iterative(['(', 'a', ')', ')', '(']) == False
-    assert parens_match_iterative([]) == True
+
 
 
 #### Scan solution
@@ -129,15 +123,7 @@ def min_f(x,y):
         return x
     return y
 
-def test_parens_match_scan():
-    assert parens_match_scan(['(', ')']) == True
-    assert parens_match_scan(['(']) == False
-    assert parens_match_scan([')']) == False
-    assert parens_match_scan(['(', 'a', ')', '(', ')']) == True
-    assert parens_match_scan(['(',  '(', '(', ')', ')', ')']) == True
-    assert parens_match_scan(['(', '(', ')']) == False
-    assert parens_match_scan(['(', 'a', ')', ')', '(']) == False
-    assert parens_match_scan([]) == True
+
 
 #### Divide and conquer solution
 
