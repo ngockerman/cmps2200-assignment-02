@@ -6,6 +6,13 @@ from collections import defaultdict
 import math
 
 #### Iterative solution
+def iterate(f, id_, a):
+    """Applies function f cumulatively over list a starting with id_."""
+    result = id_
+    for x in a:
+        result = f(result, x)
+    return result
+
 def parens_match_iterative(mylist):
     """
     Implement the iterative solution to the parens matching problem.
@@ -58,7 +65,9 @@ def parens_update(current_output, next_input):
 
 
 #### Scan solution
-
+def plus(x, y):
+    return x + y
+    
 def parens_match_scan(mylist):
     """
     Implement a solution to the parens matching problem using `scan`.
@@ -151,7 +160,7 @@ def parens_match_dc_helper(mylist):
     ###TODO
     # Base cases
     if len(mylist) == 0:
-        return [0,0]
+        return (0,0)
     elif len(mylist) == 1:
         if mylist[0] == '(':
             return (0, 1) # one unmatched (
