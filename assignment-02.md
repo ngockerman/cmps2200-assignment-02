@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:** Natalie Gockerman
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -15,38 +15,37 @@ and push to your github repository.
 Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=2W(n/3)+1$
-.  
-.  
-. 
+.  a = 2, b = 3, f(n) = 1
+.  Given that n^(log3 2) dominates the constant:
+. W(n) = Θ(n^(log 3 2)
 .  
 . 
 .  
 . 
  
 * $W(n)=5W(n/4)+n$
-.  
-.
-.  
-. 
-.  
+.  a = 5, b = 4, f(n) = n 
+.  n^(log4 5) which is approximately equal to n^(1.161)
+. Since f(n) = n = o(n^(log4 5)), case 1 applies. 
+.  Therefore W(n) = Θ(nlog4 5)
 . 
 .  
 .  
 . 
 
 * $W(n)=7W(n/7)+n$
-.  
-. 
-.  
+.  a = 7, b =7, f(n) = n
+.  Since f(n) = Θ(n), case 2 applies:
+.  W(n) = Θ(nlogn)
 .  
 . 
 .  
 .
 
 * $W(n)=9W(n/3)+n^2$
-.  
-.
-. 
+.  a = 9, b = 3, f(n) = n^2
+.  n^(logb a) = n^(log3 9) = n^2, case 2 applies
+.  W(n) = Θ(n^2 logn)
 .  
 . 
 .  
@@ -55,9 +54,9 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .
 
 * $W(n)=8W(n/2)+n^3$
-.  
-.
-.  
+.  a = 8, b =2, f(n) = n^3
+.  n^(logb a) = n^(log2 8) = n^3, case 2 applies
+.  W(n) = Θ(n^3 log n)
 .  
 .  
 .  
@@ -67,9 +66,9 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 
 * $W(n)=49W(n/25)+n^{3/2}\log n$
-.  
-.  
-. 
+.  a = 49, b = 25, f(n) = n^(3/2) logn
+.  n^(logb a) = n^(log25 49) = 1.209, case 3 applies
+.  W(n) = Θ(n^(3/2) log n)
 .  
 . 
 .  
@@ -77,8 +76,8 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 
 * $W(n)=W(n-1)+2$
-.  
-.  
+.  For this I will use telescoping:
+.  W(n) = W(n-1) + 2 = W(n-2) + 4 = ... = W(1) + 2(n-1) = Θ(n)
 . 
 .  
 . 
@@ -87,8 +86,8 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 
 * $W(n)= W(n-1)+n^c$, with $c\geq 1$
-.  
-.  
+.  For this I will use summation:
+.  W(n) = W(1) + sum (n, k=2) k^c = Θ(n^(c+1))
 .  
 .  
 .  
@@ -97,11 +96,11 @@ Derive asymptotic upper bounds of work for each recurrence below.
 . 
 
 * $W(n)=W(\sqrt{n})+1$
-.  
-.  
-.  
-.  
-.  
+.  For this I will use change of variables:
+.  n = 2^k, sqrt(n) = 2^(k/2)
+.  T(k) = W(2^k)
+.  T(k) = T(k/2) + 1 = Θ(logk)
+.  W(n) = Θ(log logn)
 . 
 . 
 
@@ -127,10 +126,10 @@ Suppose that for a given task you are choosing between the following three algor
     Which algorithm would you choose?
 
 
-.  
-.  
-.  
-.  
+.  Algorithm A: Ta(n) = Θ(n^log2 5) = Θ(n^2.322)
+.  Algorithm B: Tb(n) = Θ(2^n)
+.  Algorithm C: Tc(n) = Θ(n^2 logn)
+.  I would pick algorithm C because it has the smallest growth.
 . 
 . 
 
@@ -162,8 +161,8 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **enter answer here**
 
-.  
-. 
+.  Work recurrence: W(n) = W(n-1) + O(1), when W(0) = O(1) --> W(n) = O(n)
+.  Span recurrence: S(n) = S(n-1) + O(1), when S(0) = O(1) --> S(n) = O(n)
 
 
 
@@ -178,8 +177,16 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **enter answer here**
 
-.  
-.  
+.  Work: 
+     map = O(n)
+     scan = O(n)
+     reduce(min) = O(n)
+     Total work = O(n)
+.  Span:
+     map = O(1)
+     scan = O(log n)
+     reduce(min) = O(log n)
+     Total span = O(log n)
 
 
 
@@ -199,8 +206,8 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **enter answer here**
 
-.  
-. 
+.  Work recurrence: W(n) = 2W(n/2) + O(1), W(1) = O(1) --> W(n) = O(n)
+.  Span recurrence: S(n) = S(n/2) + O(1), S(1) = O(1) --> S(n) = O(log n)
 
 
  
